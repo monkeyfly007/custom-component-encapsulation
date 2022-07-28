@@ -1,0 +1,139 @@
+// https://less.bootcss.com/features/#variables-variable-interpolation
+// Variables
+@collapse-prefix: collapse;
+
+// Usage
+.@{collapse-prefix} {
+  position: relative;
+  overflow: hidden;
+
+  .slideLeftIn,
+  .slideLeftOut,
+  .slideRightIn,
+  .slideRightOut,
+  .slideUpIn,
+  .slideUpOut,
+  .slideDownIn,
+  .slideDownOut {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+
+  .slideLeftIn {
+    transform: translate3d(-100%, 0px, 0px);
+  }
+  .slideLeftIn.slideLeftIn-active {
+    animation-name: slideLeftIn;
+    animation-play-state: running;
+  }
+  .slideLeftOut.slideLeftOut-active {
+    animation-name: slideLeftOut;
+    animation-play-state: running;
+  }
+
+  @keyframes slideLeftIn {
+    0% {
+      transform: translate3d(-100%, 0px, 0px);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+  }
+  @keyframes slideLeftOut {
+    0% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+      transform: translate3d(-100%, 0px, 0px);
+    }
+  }
+
+  .slideRightIn {
+    transform: translate3d(100%, 0px, 0px);
+  }
+  .slideRightIn.slideRightIn-active {
+    animation-name: slideRightIn;
+    animation-play-state: running;
+  }
+  .slideRightOut.slideRightOut-active {
+    animation-name: slideRightOut;
+    animation-play-state: running;
+  }
+
+  @keyframes slideRightIn {
+    0% {
+      transform: translate3d(100%, 0px, 0px);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+  }
+  @keyframes slideRightOut {
+    0% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+      transform: translate3d(100%, 0px, 0px);
+    }
+  }
+
+  .slideUpIn {
+    transform: translate3d(0px, 100%, 0px);
+  }
+  .slideUpIn.slideUpIn-active {
+    animation-name: slideUpIn;
+    animation-play-state: running;
+  }
+  .slideUpOut.slideUpOut-active {
+    animation-name: slideUpOut;
+    animation-play-state: running;
+  }
+
+  @keyframes slideUpIn {
+    0% {
+      transform: translate3d(0px, 100%, 0px);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+  }
+  @keyframes slideUpOut {
+    0% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+      transform: translate3d(0px, 100%, 0px);
+    }
+  }
+
+  .slideDownIn {
+    transform: translate3d(0px, -100%, 0px);
+  }
+  .slideDownIn.slideDownIn-active {
+    animation-name: slideDownIn;
+    animation-play-state: running;
+  }
+  .slideDownOut.slideDownOut-active {
+    animation-name: slideDownOut;
+    animation-play-state: running;
+  }
+
+  @keyframes slideDownIn {
+    0% {
+      transform: translate3d(0px, -100%, 0px);
+    }
+    100% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+  }
+  @keyframes slideDownOut {
+    0% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+      transform: translate3d(0px, -100%, 0px);
+    }
+  }
+}
